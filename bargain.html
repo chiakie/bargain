@@ -45,11 +45,12 @@
         let resultbody = document.getElementById("resultbody");
         let sortedArr = [];
 
-        calForm.addEventListener("submit", (e)=>{
+        calForm.addEventListener("submit", (e)=> {
           e.preventDefault();
-          resultbody.innerHTML = "";
-          let spend = document.getElementById("inputMoney")
-          run(spend.value)
+          resultbody.innerHTML = ""; // clear tbody content.
+          sortedArr = []; // clear sorted array.
+          let spend = document.getElementById("inputMoney");
+          run(spend.value);
         });
 
         function insert(bank, method, tool, discount, detail, collapseCount) {
@@ -93,12 +94,12 @@
                   }
                 }
                 collapseCount++;
-                //insert(banks[b].name, methods[m].name, tools[t].name, total, detail, collapseCount);
                 sortedArr.push({"b":banks[b].name, "m":methods[m].name, "t":tools[t].name, "to":total, "d":detail, "c":collapseCount});
               }
             }
           }
 
+          // sort by discount desc.
           sortedArr.sort((a, b)=> b.to - a.to);
           for (let i = 0; i < sortedArr.length; i++) {
             insert(sortedArr[i].b, sortedArr[i].m, sortedArr[i].t, sortedArr[i].to, sortedArr[i].d, sortedArr[i].c);
