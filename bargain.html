@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>哪張卡優惠?</title>
+    <title>哪張卡優惠?v1.0</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
       .hiddenRow {
@@ -26,10 +26,10 @@
       <table class="table table-condensed">
         <thead>
           <tr>
-            <th>Bank</th>
-            <th>Method</th>
-            <th>Tool</th>
-            <th>Discount</th>
+            <th>BankCard</th>
+            <th>PayMethod</th>
+            <th>PayTool</th>
+            <th>Feedback</th>
           </tr>
         </thead>
         <tbody id="resultbody">
@@ -39,11 +39,25 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
-        let bankData = '[{"name":"富邦Ｊ","methods":[{"name":"西瓜企鵝","tools":[{"name":"儲值","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"7","limit":"200","detail":""}]}]},{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"3","limit":"600","detail":"實體店"},{"isLimit":"Y","percent":"4","limit":"200","detail":"超商/遊樂園/藥妝"}]}]}]},{"name":"永豐大戶","methods":[{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"2","limit":"0","detail":"日幣"},{"isLimit":"Y","percent":"1","limit":"600","detail":""},{"isLimit":"Y","percent":"5","limit":"300","detail":"機票/住宿/免稅店"}]}]}]},{"name":"永豐BB","methods":[{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":"日幣"},{"isLimit":"Y","percent":"4","limit":"300","detail":"機票/住宿/免稅店"}]}]}]},{"name":"永豐Sport","methods":[{"name":"西瓜企鵝","tools":[{"name":"儲值","discounts":[{"isLimit":"N","percent":"1","limit":"0","detail":""},{"isLimit":"Y","percent":"1","limit":"50","detail":""},{"isLimit":"Y","percent":"5","limit":"300","detail":""}]}]},{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"1","limit":"0","detail":""},{"isLimit":"Y","percent":"1","limit":"50","detail":""}]},{"name":"AP","discounts":[{"isLimit":"N","percent":"1","limit":"0","detail":""},{"isLimit":"Y","percent":"1","limit":"50","detail":""},{"isLimit":"Y","percent":"5","limit":"300","detail":""}]}]}]},{"name":"熊本熊","methods":[{"name":"PayPay","tools":[{"name":"Wallet","discounts":[{"isLimit":"N","percent":"1.5","limit":"0","detail":""},{"isLimit":"Y","percent":"7","limit":"500","detail":""}]}]},{"name":"西瓜企鵝","tools":[{"name":"儲值","discounts":[{"isLimit":"N","percent":"3.5","limit":"0","detail":""},{"isLimit":"Y","percent":"5","limit":"500","detail":""}]}]},{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3.5","limit":"0","detail":""}]}]}]},{"name":"玉山 Pi","methods":[{"name":"PayPay","tools":[{"name":"Wallet","discounts":[{"isLimit":"Y","percent":"20","limit":"50","detail":""}]}]},{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"1","limit":"0","detail":""},{"isLimit":"Y","percent":"3","limit":"400","detail":""}]}]}]},{"name":"吉鶴","methods":[{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""}]},{"name":"QUICPAY","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"1.5","limit":"1000","detail":""}]}]}]},{"name":"台新飛狗","methods":[{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""}]}]}]},{"name":"國泰 杖","methods":[{"name":"PayPay","tools":[{"name":"Px+","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"9","limit":"300","detail":"需共用"},{"isLimit":"Y","percent":"2","limit":"100","detail":""},{"isLimit":"Y","percent":"16","limit":"200","detail":""}]}]}]},{"name":"元大 杖","methods":[{"name":"PayPay","tools":[{"name":"Px+","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"9","limit":"300","detail":"需共用"},{"isLimit":"Y","percent":"2","limit":"100","detail":""}]}]}]},{"name":"玉山 杖","methods":[{"name":"PayPay","tools":[{"name":"Px+","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"9","limit":"300","detail":"需共用"},{"isLimit":"Y","percent":"2","limit":"50","detail":""}]}]}]},{"name":"街立存","methods":[{"name":"PayPay","tools":[{"name":"JKO","discounts":[{"isLimit":"N","percent":"4.5","limit":"0","detail":""}]}]}]}]';
-        let banks = JSON.parse(bankData)
+        //let bankData = '[{"name":"富邦Ｊ","methods":[{"name":"西瓜企鵝","tools":[{"name":"儲值","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"7","limit":"200","detail":""}]}]},{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"3","limit":"600","detail":"實體店"},{"isLimit":"Y","percent":"4","limit":"200","detail":"超商/遊樂園/藥妝"}]}]}]},{"name":"永豐大戶","methods":[{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"2","limit":"0","detail":"日幣"},{"isLimit":"Y","percent":"1","limit":"600","detail":""},{"isLimit":"Y","percent":"5","limit":"300","detail":"機票/住宿/免稅店"}]}]}]},{"name":"永豐BB","methods":[{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":"日幣"},{"isLimit":"Y","percent":"4","limit":"300","detail":"機票/住宿/免稅店"}]}]}]},{"name":"永豐Sport","methods":[{"name":"西瓜企鵝","tools":[{"name":"儲值","discounts":[{"isLimit":"N","percent":"1","limit":"0","detail":""},{"isLimit":"Y","percent":"1","limit":"50","detail":""},{"isLimit":"Y","percent":"5","limit":"300","detail":""}]}]},{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"1","limit":"0","detail":""},{"isLimit":"Y","percent":"1","limit":"50","detail":""}]},{"name":"AP","discounts":[{"isLimit":"N","percent":"1","limit":"0","detail":""},{"isLimit":"Y","percent":"1","limit":"50","detail":""},{"isLimit":"Y","percent":"5","limit":"300","detail":""}]}]}]},{"name":"熊本熊","methods":[{"name":"PayPay","tools":[{"name":"Wallet","discounts":[{"isLimit":"N","percent":"1.5","limit":"0","detail":""},{"isLimit":"Y","percent":"7","limit":"500","detail":""}]}]},{"name":"西瓜企鵝","tools":[{"name":"儲值","discounts":[{"isLimit":"N","percent":"3.5","limit":"0","detail":""},{"isLimit":"Y","percent":"5","limit":"500","detail":""}]}]},{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3.5","limit":"0","detail":""}]}]}]},{"name":"玉山 Pi","methods":[{"name":"PayPay","tools":[{"name":"Wallet","discounts":[{"isLimit":"Y","percent":"20","limit":"50","detail":""}]}]},{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"1","limit":"0","detail":""},{"isLimit":"Y","percent":"3","limit":"400","detail":""}]}]}]},{"name":"吉鶴","methods":[{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""}]},{"name":"QUICPAY","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"1.5","limit":"1000","detail":""}]}]}]},{"name":"台新飛狗","methods":[{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""}]}]}]},{"name":"國泰 杖","methods":[{"name":"PayPay","tools":[{"name":"Px+","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"9","limit":"300","detail":"需共用"},{"isLimit":"Y","percent":"2","limit":"100","detail":""},{"isLimit":"Y","percent":"16","limit":"200","detail":""}]}]}]},{"name":"元大 杖","methods":[{"name":"PayPay","tools":[{"name":"Px+","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"9","limit":"300","detail":"需共用"},{"isLimit":"Y","percent":"2","limit":"100","detail":""}]}]}]},{"name":"玉山 杖","methods":[{"name":"PayPay","tools":[{"name":"Px+","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"9","limit":"300","detail":"需共用"},{"isLimit":"Y","percent":"2","limit":"50","detail":""}]}]}]},{"name":"街立存","methods":[{"name":"PayPay","tools":[{"name":"JKO","discounts":[{"isLimit":"N","percent":"4.5","limit":"0","detail":""}]}]}]}]';
+        //let banks = JSON.parse(bankData)
         let calForm = document.getElementById("form1");
         let resultbody = document.getElementById("resultbody");
         let sortedArr = [];
+        let bankData = "";
+        let banks
+
+        document.addEventListener("DOMContentLoaded", () => {
+          fetch('https://api.npoint.io/e7034ef238bb94f7f07d', {
+            method: 'GET',
+            headers: {
+              'Accept': 'application/json',
+            }
+          })
+          .then(response => response.json())
+          //.then(response => console.log(JSON.stringify(response)))
+          .then(response => banks = response)
+          });
 
         calForm.addEventListener("submit", (e)=> {
           e.preventDefault();
@@ -94,7 +108,7 @@
                   }
                 }
                 collapseCount++;
-                sortedArr.push({"b":banks[b].name, "m":methods[m].name, "t":tools[t].name, "to":total, "d":detail, "c":collapseCount});
+                sortedArr.push({"b":banks[b].name, "m":methods[m].name, "t":tools[t].name, "to":Math.round(total), "d":detail, "c":collapseCount});
               }
             }
           }
