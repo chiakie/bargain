@@ -18,128 +18,130 @@
     </style>
   </head>
   <body>
-    <form id="form1" class="row g-3">
-        <div class="col-auto input-area">
-          <input type="text" class="form-control" id="inputMoney" placeholder="輸入消費金額">
-        </div>
-        <div class="col-auto input-button">
-          <button type="submit" class="btn btn-primary">計算</button>
-        </div>
-        <div class="col-auto input-button">
-          <button type="button" class="btn btn-secondary" id="reset">清除</button>
-        </div>
-    </form>
-    <div>
-      <table class="table table-condensed">
-        <thead>
-          <tr class="table-primary">
-            <th>BankCard</th>
-            <th>PayMethod</th>
-            <th>PayTool</th>
-            <th>Feedback</th>
-          </tr>
-        </thead>
-        <tbody id="resultbody">
-        </tbody>
-      </table>
-    </div>
-    <div style="text-align: center;">
-      <p style="color:darkgrey">© Copyright 2024 Chiakie Chien. All right reserved.</p>
+    <div class="container">
+      <form id="form1" class="row g-3">
+          <div class="col-auto input-area">
+            <input type="text" class="form-control" id="inputMoney" placeholder="輸入消費金額">
+          </div>
+          <div class="col-auto input-button">
+            <button type="submit" class="btn btn-primary">計算</button>
+          </div>
+          <div class="col-auto input-button">
+            <button type="button" class="btn btn-secondary" id="reset">清除</button>
+          </div>
+      </form>
+      <div>
+        <table class="table table-condensed">
+          <thead>
+            <tr class="table-primary">
+              <th>BankCard</th>
+              <th>PayMethod</th>
+              <th>PayTool</th>
+              <th>Feedback</th>
+            </tr>
+          </thead>
+          <tbody id="resultbody">
+          </tbody>
+        </table>
+      </div>
+      <div style="text-align: center;">
+        <p style="color:darkgrey">© Copyright 2024 Chiakie Chien. All right reserved.</p>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
-        //let bankData = '[{"name":"富邦Ｊ","methods":[{"name":"西瓜企鵝","tools":[{"name":"儲值","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"7","limit":"200","detail":""}]}]},{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"3","limit":"600","detail":"實體店"},{"isLimit":"Y","percent":"4","limit":"200","detail":"超商/遊樂園/藥妝"}]}]}]},{"name":"永豐大戶","methods":[{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"2","limit":"0","detail":"日幣"},{"isLimit":"Y","percent":"1","limit":"600","detail":""},{"isLimit":"Y","percent":"5","limit":"300","detail":"機票/住宿/免稅店"}]}]}]},{"name":"永豐BB","methods":[{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":"日幣"},{"isLimit":"Y","percent":"4","limit":"300","detail":"機票/住宿/免稅店"}]}]}]},{"name":"永豐Sport","methods":[{"name":"西瓜企鵝","tools":[{"name":"儲值","discounts":[{"isLimit":"N","percent":"1","limit":"0","detail":""},{"isLimit":"Y","percent":"1","limit":"50","detail":""},{"isLimit":"Y","percent":"5","limit":"300","detail":""}]}]},{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"1","limit":"0","detail":""},{"isLimit":"Y","percent":"1","limit":"50","detail":""}]},{"name":"AP","discounts":[{"isLimit":"N","percent":"1","limit":"0","detail":""},{"isLimit":"Y","percent":"1","limit":"50","detail":""},{"isLimit":"Y","percent":"5","limit":"300","detail":""}]}]}]},{"name":"熊本熊","methods":[{"name":"PayPay","tools":[{"name":"Wallet","discounts":[{"isLimit":"N","percent":"1.5","limit":"0","detail":""},{"isLimit":"Y","percent":"7","limit":"500","detail":""}]}]},{"name":"西瓜企鵝","tools":[{"name":"儲值","discounts":[{"isLimit":"N","percent":"3.5","limit":"0","detail":""},{"isLimit":"Y","percent":"5","limit":"500","detail":""}]}]},{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3.5","limit":"0","detail":""}]}]}]},{"name":"玉山 Pi","methods":[{"name":"PayPay","tools":[{"name":"Wallet","discounts":[{"isLimit":"Y","percent":"20","limit":"50","detail":""}]}]},{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"1","limit":"0","detail":""},{"isLimit":"Y","percent":"3","limit":"400","detail":""}]}]}]},{"name":"吉鶴","methods":[{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""}]},{"name":"QUICPAY","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"1.5","limit":"1000","detail":""}]}]}]},{"name":"台新飛狗","methods":[{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""}]}]}]},{"name":"國泰 杖","methods":[{"name":"PayPay","tools":[{"name":"Px+","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"9","limit":"300","detail":"需共用"},{"isLimit":"Y","percent":"2","limit":"100","detail":""},{"isLimit":"Y","percent":"16","limit":"200","detail":""}]}]}]},{"name":"元大 杖","methods":[{"name":"PayPay","tools":[{"name":"Px+","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"9","limit":"300","detail":"需共用"},{"isLimit":"Y","percent":"2","limit":"100","detail":""}]}]}]},{"name":"玉山 杖","methods":[{"name":"PayPay","tools":[{"name":"Px+","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"9","limit":"300","detail":"需共用"},{"isLimit":"Y","percent":"2","limit":"50","detail":""}]}]}]},{"name":"街立存","methods":[{"name":"PayPay","tools":[{"name":"JKO","discounts":[{"isLimit":"N","percent":"4.5","limit":"0","detail":""}]}]}]}]';
-        //let banks = JSON.parse(bankData)
-        let calForm = document.getElementById("form1");
-        let resetBtn = document.getElementById("reset");
-        let resultbody = document.getElementById("resultbody");
-        let sortedArr = [];
-        let bankData = "";
-        let banks;
+      //let bankData = '[{"name":"富邦Ｊ","methods":[{"name":"西瓜企鵝","tools":[{"name":"儲值","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"7","limit":"200","detail":""}]}]},{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"3","limit":"600","detail":"實體店"},{"isLimit":"Y","percent":"4","limit":"200","detail":"超商/遊樂園/藥妝"}]}]}]},{"name":"永豐大戶","methods":[{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"2","limit":"0","detail":"日幣"},{"isLimit":"Y","percent":"1","limit":"600","detail":""},{"isLimit":"Y","percent":"5","limit":"300","detail":"機票/住宿/免稅店"}]}]}]},{"name":"永豐BB","methods":[{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":"日幣"},{"isLimit":"Y","percent":"4","limit":"300","detail":"機票/住宿/免稅店"}]}]}]},{"name":"永豐Sport","methods":[{"name":"西瓜企鵝","tools":[{"name":"儲值","discounts":[{"isLimit":"N","percent":"1","limit":"0","detail":""},{"isLimit":"Y","percent":"1","limit":"50","detail":""},{"isLimit":"Y","percent":"5","limit":"300","detail":""}]}]},{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"1","limit":"0","detail":""},{"isLimit":"Y","percent":"1","limit":"50","detail":""}]},{"name":"AP","discounts":[{"isLimit":"N","percent":"1","limit":"0","detail":""},{"isLimit":"Y","percent":"1","limit":"50","detail":""},{"isLimit":"Y","percent":"5","limit":"300","detail":""}]}]}]},{"name":"熊本熊","methods":[{"name":"PayPay","tools":[{"name":"Wallet","discounts":[{"isLimit":"N","percent":"1.5","limit":"0","detail":""},{"isLimit":"Y","percent":"7","limit":"500","detail":""}]}]},{"name":"西瓜企鵝","tools":[{"name":"儲值","discounts":[{"isLimit":"N","percent":"3.5","limit":"0","detail":""},{"isLimit":"Y","percent":"5","limit":"500","detail":""}]}]},{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3.5","limit":"0","detail":""}]}]}]},{"name":"玉山 Pi","methods":[{"name":"PayPay","tools":[{"name":"Wallet","discounts":[{"isLimit":"Y","percent":"20","limit":"50","detail":""}]}]},{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"1","limit":"0","detail":""},{"isLimit":"Y","percent":"3","limit":"400","detail":""}]}]}]},{"name":"吉鶴","methods":[{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""}]},{"name":"QUICPAY","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"1.5","limit":"1000","detail":""}]}]}]},{"name":"台新飛狗","methods":[{"name":"信用卡","tools":[{"name":"直刷","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""}]}]}]},{"name":"國泰 杖","methods":[{"name":"PayPay","tools":[{"name":"Px+","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"9","limit":"300","detail":"需共用"},{"isLimit":"Y","percent":"2","limit":"100","detail":""},{"isLimit":"Y","percent":"16","limit":"200","detail":""}]}]}]},{"name":"元大 杖","methods":[{"name":"PayPay","tools":[{"name":"Px+","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"9","limit":"300","detail":"需共用"},{"isLimit":"Y","percent":"2","limit":"100","detail":""}]}]}]},{"name":"玉山 杖","methods":[{"name":"PayPay","tools":[{"name":"Px+","discounts":[{"isLimit":"N","percent":"3","limit":"0","detail":""},{"isLimit":"Y","percent":"9","limit":"300","detail":"需共用"},{"isLimit":"Y","percent":"2","limit":"50","detail":""}]}]}]},{"name":"街立存","methods":[{"name":"PayPay","tools":[{"name":"JKO","discounts":[{"isLimit":"N","percent":"4.5","limit":"0","detail":""}]}]}]}]';
+      //let banks = JSON.parse(bankData)
+      let calForm = document.getElementById("form1");
+      let resetBtn = document.getElementById("reset");
+      let resultbody = document.getElementById("resultbody");
+      let sortedArr = [];
+      let bankData = "";
+      let banks;
 
-        // 網頁元件load完畢即可執行讀取外界json資料
-        document.addEventListener("DOMContentLoaded", () => {
-          fetch('https://api.npoint.io/e7034ef238bb94f7f07d', {
-            method: 'GET',
-            headers: {
-              'Accept': 'application/json',
-            }
-          })
-          .then(response => response.json())
-          //.then(response => console.log(JSON.stringify(response)))
-          .then(response => banks = response)
-        });
-
-        // 點擊清除查詢結果
-        resetBtn.addEventListener("click", (e)=> {
-          resultbody.innerHTML = ""; // clear tbody content.
-          sortedArr = []; // clear sorted array.
-        });
-
-        // 送出執行查詢
-        calForm.addEventListener("submit", (e)=> {
-          e.preventDefault();
-          resultbody.innerHTML = ""; // clear tbody content.
-          sortedArr = []; // clear sorted array.
-          let spend = document.getElementById("inputMoney");
-          run(spend.value);
-        });
-
-        // 將計算結果塞入tbody做顯示
-        function insert(bank, method, tool, discount, detail, collapseCount) {
-          let bankText = "";
-          let collapseTr = "";
-          if (detail != "") {
-            bankText = '<td>' + bank + '<span style="color:red">*</span></td>';
-            collapseTr = '<tr><td colspan="4" class="hiddenRow"><div id="demo'+ collapseCount +'" class="accordian-body collapse" style="color: var(--bs-danger)">'+ detail +'</div></td></tr>';
-          } else {
-            bankText = '<td>' + bank + '</td>';
+      // 網頁元件load完畢即可執行讀取外界json資料
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch('https://api.npoint.io/e7034ef238bb94f7f07d', {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
           }
-          resultbody.innerHTML += '<tr data-bs-toggle="collapse" data-bs-target="#demo'+ collapseCount +'" class="accordion-toggle">' +
-            bankText + '<td>' + method + '</td><td>'+ tool +'</td><td>'+ discount +'</td></tr>' + collapseTr;
-        }
+        })
+        .then(response => response.json())
+        //.then(response => console.log(JSON.stringify(response)))
+        .then(response => banks = response)
+      });
 
-        // 計算回饋
-        function run(number) {
-          let collapseCount = 0;
-          for (let b=0; b<banks.length; b++) {
-            let methods = banks[b].methods;
-            for (let m=0; m<methods.length; m++) {
-              let tools = methods[m].tools;
-              for (let t=0; t<tools.length; t++) {
-                let discounts = tools[t].discounts;
-                let total = 0
-                let detail = ""
-                for (let d=0; d<discounts.length; d++) {
-                  let disc = discounts[d]
-                  let maxdisc = number*parseInt(disc.percent)*0.01;
-                  let result = 0;
-                  if (disc.isLimit == "Y") {
-                    result = (maxdisc > parseInt(disc.limit) ? parseInt(disc.limit) : maxdisc);
-                  } else {
-                    result = maxdisc
-                  }
-                  total += result;
-                  if (disc.detail != "") {
-                    detail+=(disc.detail+'('+ disc.percent +'%)上限'+disc.limit)
-                    if (d != discounts.length-1) {
-                      detail+='</br>';
-                    }
+      // 點擊清除查詢結果
+      resetBtn.addEventListener("click", (e)=> {
+        resultbody.innerHTML = ""; // clear tbody content.
+        sortedArr = []; // clear sorted array.
+      });
+
+      // 送出執行查詢
+      calForm.addEventListener("submit", (e)=> {
+        e.preventDefault();
+        resultbody.innerHTML = ""; // clear tbody content.
+        sortedArr = []; // clear sorted array.
+        let spend = document.getElementById("inputMoney");
+        run(spend.value);
+      });
+
+      // 將計算結果塞入tbody做顯示
+      function insert(bank, method, tool, discount, detail, collapseCount) {
+        let bankText = "";
+        let collapseTr = "";
+        if (detail != "") {
+          bankText = '<td>' + bank + '<span style="color:red">*</span></td>';
+          collapseTr = '<tr><td colspan="4" class="hiddenRow"><div id="demo'+ collapseCount +'" class="accordian-body collapse" style="color: var(--bs-danger)">'+ detail +'</div></td></tr>';
+        } else {
+          bankText = '<td>' + bank + '</td>';
+        }
+        resultbody.innerHTML += '<tr data-bs-toggle="collapse" data-bs-target="#demo'+ collapseCount +'" class="accordion-toggle">' +
+          bankText + '<td>' + method + '</td><td>'+ tool +'</td><td>'+ discount +'</td></tr>' + collapseTr;
+      }
+
+      // 計算回饋
+      function run(number) {
+        let collapseCount = 0;
+        for (let b=0; b<banks.length; b++) {
+          let methods = banks[b].methods;
+          for (let m=0; m<methods.length; m++) {
+            let tools = methods[m].tools;
+            for (let t=0; t<tools.length; t++) {
+              let discounts = tools[t].discounts;
+              let total = 0
+              let detail = ""
+              for (let d=0; d<discounts.length; d++) {
+                let disc = discounts[d]
+                let maxdisc = number*parseInt(disc.percent)*0.01;
+                let result = 0;
+                if (disc.isLimit == "Y") {
+                  result = (maxdisc > parseInt(disc.limit) ? parseInt(disc.limit) : maxdisc);
+                } else {
+                  result = maxdisc
+                }
+                total += result;
+                if (disc.detail != "") {
+                  detail+=(disc.detail+'('+ disc.percent +'%)上限'+disc.limit)
+                  if (d != discounts.length-1) {
+                     detail+='</br>';
                   }
                 }
-                collapseCount++;
-                sortedArr.push({"b":banks[b].name, "m":methods[m].name, "t":tools[t].name, "to":Math.round(total), "d":detail, "c":collapseCount});
               }
+              collapseCount++;
+              sortedArr.push({"b":banks[b].name, "m":methods[m].name, "t":tools[t].name, "to":Math.round(total), "d":detail, "c":collapseCount});
             }
           }
-
-          // 做排序，回饋高者排前面
-          sortedArr.sort((a, b)=> b.to - a.to);
-          for (let i = 0; i < sortedArr.length; i++) {
-            insert(sortedArr[i].b, sortedArr[i].m, sortedArr[i].t, sortedArr[i].to, sortedArr[i].d, sortedArr[i].c);
-          }
         }
+
+        // 做排序，回饋高者排前面
+        sortedArr.sort((a, b)=> b.to - a.to);
+        for (let i = 0; i < sortedArr.length; i++) {
+          insert(sortedArr[i].b, sortedArr[i].m, sortedArr[i].t, sortedArr[i].to, sortedArr[i].d, sortedArr[i].c);
+        }
+      }
     </script>
   </body>
 </html>
