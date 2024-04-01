@@ -1,0 +1,318 @@
+[
+  {
+    "name": "富邦Ｊ",
+    "methods": [
+      {
+        "name": "西瓜企鵝",
+        "tools": [
+          {
+            "name": "儲值",
+            "discounts": [
+              {"isLimit": "N", "percent": "3", "limit": "0"  , "detail": ""},
+              {"isLimit": "Y", "percent": "7", "limit": "200", "detail": ""}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "信用卡",
+        "tools": [
+          {
+            "name": "直刷",
+            "discounts": [
+              {"isLimit": "N", "percent": "3", "limit": "0", "detail": ""},
+              {
+                "isLimit": "Y"  ,
+                "percent": "3"  ,
+                "limit"  : "600",
+                "detail" : "實體店"
+              },
+              {
+                "isLimit": "Y"        ,
+                "percent": "4"        ,
+                "limit"  : "200"      ,
+                "detail" : "超商/遊樂園/藥妝"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "永豐大戶",
+    "methods": [
+      {
+        "name": "信用卡",
+        "tools": [
+          {
+            "name": "直刷",
+            "discounts": [
+              {"isLimit": "N", "percent": "2", "limit": "0", "detail": "日幣"},
+              {"isLimit": "Y", "percent": "1", "limit": "600", "detail": ""},
+              {
+                "isLimit": "Y"        ,
+                "percent": "5"        ,
+                "limit"  : "300"      ,
+                "detail" : "機票/住宿/免稅店"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "永豐BB",
+    "methods": [
+      {
+        "name": "信用卡",
+        "tools": [
+          {
+            "name": "直刷",
+            "discounts": [
+              {"isLimit": "N", "percent": "3", "limit": "0", "detail": "日幣"},
+              {
+                "isLimit": "Y"        ,
+                "percent": "4"        ,
+                "limit"  : "300"      ,
+                "detail" : "機票/住宿/免稅店"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "永豐Sport",
+    "methods": [
+      {
+        "name": "西瓜企鵝",
+        "tools": [
+          {
+            "name": "儲值",
+            "discounts": [
+              {"isLimit": "N", "percent": "1", "limit": "0"  , "detail": ""},
+              {"isLimit": "Y", "percent": "1", "limit": "50" , "detail": ""},
+              {"isLimit": "Y", "percent": "5", "limit": "300", "detail": ""}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "信用卡",
+        "tools": [
+          {
+            "name": "直刷",
+            "discounts": [
+              {"isLimit": "N", "percent": "1", "limit": "0" , "detail": ""},
+              {"isLimit": "Y", "percent": "1", "limit": "50", "detail": ""}
+            ]
+          },
+          {
+            "name": "AP",
+            "discounts": [
+              {"isLimit": "N", "percent": "1", "limit": "0"  , "detail": ""},
+              {"isLimit": "Y", "percent": "1", "limit": "50" , "detail": ""},
+              {"isLimit": "Y", "percent": "5", "limit": "300", "detail": ""}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "熊本熊",
+    "methods": [
+      {
+        "name": "PayPay",
+        "tools": [
+          {
+            "name": "Wallet",
+            "discounts": [
+              {"isLimit": "N", "percent": "1.5", "limit": "0"  , "detail": ""},
+              {"isLimit": "Y", "percent": "7"  , "limit": "500", "detail": ""}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "西瓜企鵝",
+        "tools": [
+          {
+            "name": "儲值",
+            "discounts": [
+              {"isLimit": "N", "percent": "3.5", "limit": "0"  , "detail": ""},
+              {"isLimit": "Y", "percent": "5"  , "limit": "500", "detail": ""}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "信用卡",
+        "tools": [
+          {
+            "name": "直刷",
+            "discounts": [
+              {"isLimit": "N", "percent": "3.5", "limit": "0", "detail": ""}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "玉山 Pi",
+    "methods": [
+      {
+        "name": "PayPay",
+        "tools": [
+          {
+            "name": "Wallet",
+            "discounts": [
+              {"isLimit": "Y", "percent": "20", "limit": "50", "detail": ""}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "信用卡",
+        "tools": [
+          {
+            "name": "直刷",
+            "discounts": [
+              {"isLimit": "N", "percent": "1", "limit": "0"  , "detail": ""},
+              {"isLimit": "Y", "percent": "3", "limit": "400", "detail": ""}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "吉鶴",
+    "methods": [
+      {
+        "name": "信用卡",
+        "tools": [
+          {
+            "name": "直刷",
+            "discounts": [
+              {"isLimit": "N", "percent": "3", "limit": "0", "detail": ""}
+            ]
+          },
+          {
+            "name": "QUICPAY",
+            "discounts": [
+              {"isLimit": "N", "percent": "3", "limit": "0", "detail": ""},
+              {"isLimit": "Y", "percent": "1.5", "limit": "1000", "detail": ""}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "台新飛狗",
+    "methods": [
+      {
+        "name": "信用卡",
+        "tools": [
+          {
+            "name": "直刷",
+            "discounts": [
+              {"isLimit": "N", "percent": "3", "limit": "0", "detail": ""}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "國泰 杖",
+    "methods": [
+      {
+        "name": "PayPay",
+        "tools": [
+          {
+            "name": "Px+",
+            "discounts": [
+              {"isLimit": "N", "percent": "3", "limit": "0", "detail": ""},
+              {
+                "isLimit": "Y"  ,
+                "percent": "9"  ,
+                "limit"  : "300",
+                "detail" : "需共用"
+              },
+              {"isLimit": "Y", "percent": "2", "limit": "100", "detail": ""},
+              {"isLimit": "Y", "percent": "16", "limit": "200", "detail": ""}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "元大 杖",
+    "methods": [
+      {
+        "name": "PayPay",
+        "tools": [
+          {
+            "name": "Px+",
+            "discounts": [
+              {"isLimit": "N", "percent": "3", "limit": "0", "detail": ""},
+              {
+                "isLimit": "Y"  ,
+                "percent": "9"  ,
+                "limit"  : "300",
+                "detail" : "需共用"
+              },
+              {"isLimit": "Y", "percent": "2", "limit": "100", "detail": ""}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "玉山 杖",
+    "methods": [
+      {
+        "name": "PayPay",
+        "tools": [
+          {
+            "name": "Px+",
+            "discounts": [
+              {"isLimit": "N", "percent": "3", "limit": "0", "detail": ""},
+              {
+                "isLimit": "Y"  ,
+                "percent": "9"  ,
+                "limit"  : "300",
+                "detail" : "需共用"
+              },
+              {"isLimit": "Y", "percent": "2", "limit": "50", "detail": ""}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "街立存",
+    "methods": [
+      {
+        "name": "PayPay",
+        "tools": [
+          {
+            "name": "JKO",
+            "discounts": [
+              {"isLimit": "N", "percent": "4.5", "limit": "0", "detail": ""}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
